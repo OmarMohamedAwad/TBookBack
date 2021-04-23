@@ -10,6 +10,7 @@ const userPresenter = require("../../user/presenter/userPresenter");
 
 async function adminAccessController(request, response, next) {
     const accessRequest = request.body
+    console.log("here");
     try {
 
         const admin = await Admin.findOne({ adminName: accessRequest.adminName })

@@ -22,11 +22,10 @@ const ratingRouter = require('./modules/rating/routes/RatingRoute');
 const dashboardRouter = require('./modules/dashboard/routes/dasboardRoute');
 const fileUploadRouter = require('./modules/shared/fileUpload.js')
 const app = express();
-//app.use(cors());
 
+app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors())
 
 app.use((req, res, next) => {
     console.log(new Date(), req.url, req.method)

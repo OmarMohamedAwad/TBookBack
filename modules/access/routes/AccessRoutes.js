@@ -4,6 +4,7 @@ const AccessController = require('../controllers/AccessController')
 const AccessRouter = express.Router()
 
 AccessRouter.post("/admin", async (request, response, next)=> {
+    console.log("here");
     await AccessController.adminAccessController(request, response, next);
 })
 

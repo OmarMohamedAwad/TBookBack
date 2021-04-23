@@ -50,7 +50,7 @@ const errorHandler = (err, req, res, next) => {
     error = new ErrorResponse(ResponseCode.SERVER_ERROR, ResponseMessage.SERVER_ERROR_MESSAGE)
     res.json(error);
   }else{
-    error = new ErrorResponse(403, "Wrong username or password")
+    error = new ErrorResponse(403, error)
     res.json(error);
     console.log(err);
   }
