@@ -128,10 +128,10 @@ async function update(request, response, next) {
     const { id } = request.params;
     const author = request.body
     const updatedAuther = {
-        ...(author.firstName ? { autherFirstName: author.firstName } : {}),
-        ...(author.lastName ? { autherLastName: author.lastName } : {}),
-        ...(author.birthDay ? { authorDob: author.birthDay } : {}),
-        ...(author.image ? { authorImage: author.image } : {}),
+        ...(author.firstName && author.firstName != ""  ? { autherFirstName: author.firstName } : {}),
+        ...(author.lastName && author.lastName != "" ? { autherLastName: author.lastName } : {}),
+        ...(author.birthDay && author.birthDay != "" ? { authorDob: author.birthDay } : {}),
+        ...(author.image && author.image != "" ? { authorImage: author.image } : {}),
     }
 
     try {

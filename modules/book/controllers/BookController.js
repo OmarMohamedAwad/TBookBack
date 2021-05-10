@@ -112,7 +112,8 @@ async function destroy(request, response, next) {
     const { id } = request.params
     try {
         const bookDeleteResult = await bookModel.findById(id);
-        bookDeleteResult.remove()
+        await bookDeleteResult.remove()
+        
         response.json({
             status: ResponseCode.SUCCESS,
             message: ResponseMessage.DELETE_MESSAGE
